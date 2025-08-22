@@ -1,0 +1,392 @@
+/* Batch URL Downloader - GitHub Dark Mode Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #e6edf3;
+    background: #0d1117;
+    padding: 20px;
+    min-height: 100vh;
+    zoom: 0.8;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+header {
+    background: #21262d;
+    color: #f0f6fc;
+    padding: 24px 32px;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #f0f6fc;
+}
+
+.input-section {
+    padding: 32px;
+    border-bottom: 1px solid #30363d;
+    background: #161b22;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.options {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #21262d;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin: 0;
+    color: #e6edf3;
+}
+
+.options input[type="checkbox"] {
+    margin: 0;
+    accent-color: #238636;
+}
+
+.hint {
+    display: block;
+    font-size: 12px;
+    color: #8b949e;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #f0f6fc;
+    font-size: 14px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    font-size: 14px;
+    resize: vertical;
+    background: #0d1117;
+    color: #e6edf3;
+    transition: border-color 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+input[type="text"] {
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #0d1117;
+    color: #e6edf3;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+input[type="text"]:disabled {
+    background: #21262d;
+    color: #8b949e;
+    border-color: #30363d;
+    cursor: not-allowed;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn, button {
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+}
+
+#startBtn {
+    background: #238636;
+    color: #ffffff;
+    border-color: rgba(240, 246, 252, 0.1);
+}
+
+#startBtn:hover:not(:disabled) {
+    background: #2ea043;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.12);
+}
+
+#startBtn.downloading {
+    background: #fb8500;
+    color: #ffffff;
+}
+
+#startBtn:disabled {
+    background: #484f58;
+    color: #8b949e;
+    cursor: not-allowed;
+    border-color: #30363d;
+}
+
+#clearBtn {
+    background: #21262d;
+    color: #f0f6fc;
+    border-color: #30363d;
+}
+
+#clearBtn:hover {
+    background: #30363d;
+    border-color: #8b949e;
+}
+
+.progress-section {
+    padding: 24px 32px;
+    background: #0d1117;
+    border-bottom: 1px solid #30363d;
+}
+
+.stats {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 16px;
+}
+
+.stat {
+    display: flex;
+    gap: 8px;
+}
+
+.stat .label {
+    color: #8b949e;
+    font-weight: 500;
+}
+
+.stat span:last-child {
+    font-weight: 600;
+    color: #f0f6fc;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #21262d;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid #30363d;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #58a6ff;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.progress-fill.success {
+    background: #238636;
+}
+
+.progress-fill.error {
+    background: #da3633;
+}
+
+.status {
+    font-size: 14px;
+    color: #8b949e;
+    text-align: center;
+    font-weight: 500;
+}
+
+.log-section {
+    padding: 24px 32px;
+    background: #161b22;
+}
+
+.log-section h3 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: #f0f6fc;
+    font-weight: 600;
+}
+
+.log {
+    height: 240px;
+    overflow-y: auto;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 16px;
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.log-entry {
+    margin-bottom: 4px;
+    word-break: break-all;
+    padding: 2px 0;
+}
+
+.log-entry.success {
+    color: #56d364;
+}
+
+.log-entry.error {
+    color: #f85149;
+}
+
+.log-entry.info {
+    color: #8b949e;
+}
+
+.log-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    font-size: 12px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #30363d;
+}
+
+.github-link {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s;
+}
+
+.github-link:hover {
+    color: #79c0ff;
+    text-decoration: underline;
+}
+
+.version {
+    color: #8b949e;
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+/* Scrollbar styling - GitHub style */
+.log::-webkit-scrollbar {
+    width: 8px;
+}
+
+.log::-webkit-scrollbar-track {
+    background: #21262d;
+    border-radius: 4px;
+}
+
+.log::-webkit-scrollbar-thumb {
+    background: #484f58;
+    border-radius: 4px;
+}
+
+.log::-webkit-scrollbar-thumb:hover {
+    background: #656c76;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+    
+    .input-section, .progress-section, .log-section {
+        padding: 20px;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    input[type="text"] {
+        width: 100%;
+    }
+    
+    .container {
+        border-radius: 8px;
+    }
+    
+    .log-footer {
+        justify-content: center;
+    }
+}
+
+/* Focus states for accessibility - GitHub style */
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid #58a6ff;
+    outline-offset: 2px;
+}
+
+/* Selection colors */
+::selection {
+    background: #2d5ffe;
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background: #2d5ffe;
+    color: #ffffff;
+} 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGrap - Batch URL Downloader</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WebGrap</h1>
+        </header>
+        
+        <div class="input-section">
+            <div class="form-group">
+                <label for="urls">URLs (one per line):</label>
+                <textarea id="urls" placeholder="https://example.com/file1.jpg&#10;https://example.com/file2.css&#10;https://example.com/file3.js"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="dirPath">Directory:</label>
+                <input type="text" id="dirPath" value="downloads/" placeholder="downloads/">
+                <small class="hint">When auto-scanning is enabled, page title will be used as directory name</small>
+            </div>
+            
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="scanResources">
+                    Auto-scan page resources (CSS, JS, images)
+                </label>
+            </div>
+            
+            <div class="actions">
+                <button id="startBtn">Start Download</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+        </div>
+        
+        <div class="progress-section">
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">Total:</span>
+                    <span id="totalCount">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Completed:</span>
+                    <span id="completedCount">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Failed:</span>
+                    <span id="failedCount">0</span>
+                </div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div class="status" id="status">Ready</div>
+        </div>
+        
+        <div class="log-section">
+            <h3>Download Log</h3>
+            <div class="log" id="log"></div>
+            <div class="log-footer">
+                <a href="https://github.com/JustKanade/WebGrab.git" target="_blank" class="github-link">GitHub</a>
+                <span class="version">v1.0.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html> 
